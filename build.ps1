@@ -92,7 +92,7 @@ New-Item -ItemType Directory $target > $null
 
 # make sure dependencies are built first so clippy runs correctly
 $windows_projects = @("pal", "ntreg", "ntstatuserror", "ntuserinfo", "registry")
-$projects = @("dsc_lib", "dsc", "osinfo", "process", "tools/test_group_resource", "y2j", "powershellgroup", "tools/dsctest")
+$projects = @("dsc_lib", "dsc", "file", "osinfo", "process", "tools/test_group_resource", "y2j", "powershellgroup", "tools/dsctest")
 $pedantic_unclean_projects = @("ntreg")
 
 if ($IsWindows) {
