@@ -13,6 +13,7 @@ use crate::Algorithm;
 /// * `content` - The content to use when asserting or setting the desired state.
 /// * `exist` - The well-known flag indicating whether or not the file exists or should exist.
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize, JsonSchema)]
+#[schemars(title = "DSC.FileConfiguration", description = "File resource configuration.")]
 pub struct FileConfiguration {
     pub path: String,
     #[serde(rename = "hash", skip_serializing_if = "Option::is_none")]
@@ -146,6 +147,7 @@ impl Default for FileConfiguration {
 /// * `algorithm` - The algorithm to use when comparing or computing the checksum.
 /// * `checksum` - The checksum to compare against or the computed result.
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize, JsonSchema)]
+#[schemars(title = "DSC.HashConfiguration", description = "Hash configuration.")]
 pub struct HashConfiguration {
     pub algorithm: Algorithm,
     #[serde(skip_serializing_if = "Option::is_none")]
